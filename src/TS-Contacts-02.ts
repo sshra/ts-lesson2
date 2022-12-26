@@ -18,8 +18,12 @@ persons2.push({
   role: 'Lead admin',
 });
 
-const logPerson2 = ({name, age} : Person) => {
-  console.log(`${name}, ${age}`);
+const logPerson2 = (human: Person) => {
+  if ('role' in human) {
+    console.log(`${human.name}, ${human.age}, role: ${human.role}`);
+  } else {
+    console.log(`${human.name}, ${human.age}, group: ${human.group}`);
+  }
 };
 
 persons2.forEach(logPerson2);
